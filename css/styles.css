@@ -24,7 +24,8 @@ body {
   font-family: 'Georgia', serif;
   color: var(--text-color);
   line-height: 1.6;
-  padding: 15px;
+  margin: 0;
+  padding: 0;
   background-color: var(--background-color);
 }
 
@@ -60,6 +61,9 @@ nav ul li a {
   color: var(--text-color);
 }
 
+main {
+  padding: 0 2rem;
+}
 section {
   padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
@@ -93,25 +97,32 @@ button:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url('..images/Seashore-sunset-andrew-coelho-m6tAqZvy4RM-unsplash.jpg');
+    background-image: url('../images/Seashore-sunset-andrew-coelho-m6tAqZvy4RM-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     align-items: center;
+    margin: 0 -2rem; /* Negative margin to counteract main padding */
+    width: calc(100% + 4rem); /* Adjust width to account for negative margins */
 }
 
 .hero-content {
     max-width: 50%;
     padding: 2rem;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: black;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    margin-left: 2rem;
 }
 
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
@@ -137,13 +148,13 @@ a.button:hover {
 footer {
   text-align: center;
   padding: 20px 0;
-  background-color: var(--primary-color);
-  color: var(--button-text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 footer a {
   display: block;
-  color: var(--button-text-color);
+  color: var(--text-color);
   margin-top: 10px;
 }
 
@@ -211,4 +222,128 @@ footer a {
       justify-content: space-between;
       align-items: center;
   }
+}
+
+/* Add padding to main element */
+main {
+    padding: 0 2rem;
+}
+
+/* Content Sections with Images */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.section-content {
+  text-align: left;
+}
+
+.section-content h2 {
+  text-align: center;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .content-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section-image {
+    width: 45%;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .section-content {
+    width: 50%;
+    text-align: left;
+  }
+
+  /* Alternate image position */
+  .content-section:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Contact Form Styles */
+#contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+#contact-form h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+#travel-agent-form button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#travel-agent-form button:hover {
+  background-color: var(--primary-hover);
+}
+
+@media (max-width: 768px) {
+  #contact-form {
+    padding: 1.5rem;
+  }
+}
+
+.content-section > a {
+  display: contents;
 }
