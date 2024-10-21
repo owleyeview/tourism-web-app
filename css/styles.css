@@ -101,7 +101,7 @@ button:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     margin: 0 -2rem; /* Negative margin to counteract main padding */
@@ -348,7 +348,10 @@ main {
   display: contents;
 }
 
-@media (min-width: 590px) {
+@media (min-width: 595px) {
+  .hero {
+    height: 60vh;
+  }
   .hero-content {
     max-width: 50%;
   }
